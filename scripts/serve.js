@@ -8,7 +8,7 @@ const folder = path.resolve(__dirname, "../fs");
 // TODO move to some file or env
 const JSONSCHEMA_WEB_UI_CONFIG_MODE_CONFIG = {
     config: {
-        schema: {
+        schema: `{
             "title": "My Device",
             "type": "object",
             "properties": {
@@ -45,13 +45,13 @@ const JSONSCHEMA_WEB_UI_CONFIG_MODE_CONFIG = {
                     }
                 }
             }
-        }
+        }`
     }
 };
 
 const JSONSCHEMA_WEB_UI_CONFIG_MODE_CUSTOM = {
     customconfig: {
-        schema: {
+        schema: `{
             "title": "My Device",
             "type": "object",
             "properties": {
@@ -83,7 +83,7 @@ const JSONSCHEMA_WEB_UI_CONFIG_MODE_CUSTOM = {
                     }
                 }
             }
-        },
+        }`,
         mapping: {
             "wifi-group.ssid": "wifi.sta.ssid",
             "wifi-group.password": "wifi.sta.password"
@@ -93,7 +93,7 @@ const JSONSCHEMA_WEB_UI_CONFIG_MODE_CUSTOM = {
 
 const JSONSCHEMA_WEB_UI_CONFIG_MODE_CONFIG_WITH_RPC = {
     config: {
-        schema: {
+        schema: `{
             "title": "My Device",
             "type": "object",
             "required": ["rpc-call-group"],
@@ -157,7 +157,7 @@ const JSONSCHEMA_WEB_UI_CONFIG_MODE_CONFIG_WITH_RPC = {
                     }
                 }
             }
-        }
+        }`
     }
 }
 

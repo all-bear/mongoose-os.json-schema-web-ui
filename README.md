@@ -16,7 +16,7 @@ If you want to allow editing part of Mongoose OS config you could define your sc
 mos.yml
 ...
 config_schema:
-  - ["jsonschemawebui.config.schema", {
+  - ["jsonschemawebui.config.schema", '{
     "title": "My Device",
     "type": "object",
     "properties": {
@@ -53,7 +53,7 @@ config_schema:
         }
       }
     }
-  }]
+  }']
 ...
 ```
 `schema` - should describe fields from config which you want to show.
@@ -72,7 +72,7 @@ You could describe your custom form with mapping to Mongoose OS config like this
 mos.yml
 ...
 config_schema:
-  - ["jsonschemawebui.customconfig.schema", {
+  - ["jsonschemawebui.customconfig.schema", '{
     "title": "My Device",
     "type": "object",
     "properties": {
@@ -104,7 +104,7 @@ config_schema:
         }
       }
     }
-  }]
+  }']
   - ["jsonschemawebui.customconfig.mapping", {
     "wifi-group.ssid": "wifi.sta.ssid",
     "wifi-group.password": "wifi.sta.password"
@@ -127,7 +127,7 @@ Inside your schema (doesn't matter is it config or custom form) you could use bu
 mos.yml
 ...
 config_schema:
-  - ["jsonschemawebui.config.schema", {
+  - ["jsonschemawebui.config.schema", '{
     "title": "My Device",
     "type": "object",
     "required": ["rpc-call-group"],
@@ -191,7 +191,7 @@ config_schema:
         }
       }
     }                                        
-  }]
+  }']
 ...
 ```
 `name` - is name of your RCP

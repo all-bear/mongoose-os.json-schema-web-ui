@@ -50,7 +50,7 @@ loadConfig().then((config) => {
     const isCustomConfigMode = Boolean(config["jsonschemawebui"].customconfig);
     const modeBehavior = WebUIConfigModeBehavior[isCustomConfigMode ? "customconfig" : "config"];
 
-    initializeJSONEditor(modeBehavior.getSchema(config), modeBehavior.getDataFromConfig(config), async (data, reboot) => {
+    initializeJSONEditor(JSON.parse(modeBehavior.getSchema(config)), modeBehavior.getDataFromConfig(config), async (data, reboot) => {
         try {
             await saveConfig(modeBehavior.getConfigFromData(data, config), reboot);
 
