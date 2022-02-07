@@ -211,7 +211,9 @@ This will generate a page which will looks like this:
 ## Development
 
 Run `npm run build` to build gziped `fs` folder.
+
 Run `npm run watch` to build and watch gziped `fs` folder.
+
 Run `npm run serve` to serve `fs` folder during development.
 
 PS: If you like this idea and you have time to maintain this package - please feel free to create a fork or create a new repo for this, and I'll remove this library from my account - unfortunately I have no time to maintain it, so probably after some time this repo becomes dead :( 
