@@ -1,0 +1,29 @@
+author: Oleh Biriukov <ol.biriukov@gmail.com>
+description: Mongoose OS JSON schema based web ui
+type: lib
+filesystem:
+  - fs
+version: 1.0
+
+config_schema:
+  - [ "jsonschemawebui", "o", {}, { title: "JSON Schema web ui settings" } ]
+
+libs:
+  - location: https://github.com/mongoose-os-libs/http-server
+  - location: https://github.com/mongoose-os-libs/rpc-service-config
+  - location: https://github.com/danholland/webserver-gzip
+
+init_after:
+  - webserver-gzip
+
+tags:
+  - wifi
+  - setup
+  - js
+  - portal
+  - ui
+  - web
+  - html
+  - css
+
+manifest_version: 2017-09-29
