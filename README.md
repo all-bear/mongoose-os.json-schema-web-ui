@@ -57,6 +57,7 @@ config_schema:
 ...
 ```
 `schema` - should describe fields from config which you want to show.
+
 `submit` - this field could be named with any name while it's type button and `action` is `save-config`
 
 This will generate a page which will looks like this:
@@ -111,6 +112,7 @@ config_schema:
 ...
 ```
 `schema` - is your custom JSON Schema, do what ever you want there and put what ever fields you want in any nestings
+
 `jsonschemawebui.customconfig.mapping` - this is mapping from your form values to values from Mongoose OS config
 
 This will generate a page which will looks like this:
@@ -193,7 +195,9 @@ config_schema:
 ...
 ```
 `name` - is name of your RCP
+
 `params` - not params to your RPC if you need them
+
 `"required": ["rpc-call-group"]` - this is a little hack, with this line your `rpc-call-group` will be hidden because there are no value from config
 
 This will generate a page which will looks like this:
