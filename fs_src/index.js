@@ -20,7 +20,7 @@ const WebUIConfigModeBehavior = {
             return config.jsonschemawebui.customconfig.schema;
         },
         getDataFromConfig(config) {
-            const mapping = config.jsonschemawebui.customconfig.mapping;
+            const mapping = JSON.parse(config.jsonschemawebui.customconfig.mapping);
             const data = {};
 
             for (const dataPath in mapping) {
