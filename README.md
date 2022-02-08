@@ -32,7 +32,7 @@ config_schema:
                 "type": "string",
                 "title": "SSID"
               },
-              "password": {
+              "pass": {
                 "type": "string",
                 "title": "Password"
               }
@@ -107,7 +107,7 @@ config_schema:
   }']
   - ["jsonschemawebui.customconfig.mapping", '{
     "wifi-group.ssid": "wifi.sta.ssid",
-    "wifi-group.password": "wifi.sta.password"
+    "wifi-group.password": "wifi.sta.pass"
   }']
 ...
 ```
