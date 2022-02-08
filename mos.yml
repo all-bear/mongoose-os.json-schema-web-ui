@@ -6,12 +6,12 @@ filesystem:
 version: 1.0
 
 config_schema:
-  - [ "jsonschemawebui", "o", { title: "JSON Schema web ui settings" } ]
-  - [ "jsonschemawebui.config", "o", { title: "JSON Schema web ui config settings" } ]
-  - [ "jsonschemawebui.config.schema", "s", "{}", { title: "JSON Schema web ui config settings schema" } ]
-  - [ "jsonschemawebui.customconfig", "o", { title: "JSON Schema web ui config settings" } ]
-  - [ "jsonschemawebui.customconfig.schema", "s", "{}", { title: "JSON Schema web ui config settings schema" } ]
-  - [ "jsonschemawebui.customconfig.mapping", "o", {}, { title: "JSON Schema web ui config settings mapping" } ]
+  - ["jsonschemawebui", "o", { title: "JSON Schema web ui settings" } ]
+  - ["jsonschemawebui.config", "o", { title: "JSON Schema web ui config settings" } ]
+  - ["jsonschemawebui.config.schema", "s", "{}", { title: "JSON Schema web ui config settings schema" } ]
+  - ["jsonschemawebui.customconfig", "o", { title: "JSON Schema web ui config settings" } ]
+  - ["jsonschemawebui.customconfig.schema", "s", "{}", { title: "JSON Schema web ui config settings schema" } ]
+  - ["jsonschemawebui.customconfig.mapping", "s", "{}", { title: "JSON Schema web ui config settings mapping" } ]
 
 libs:
   - location: https://github.com/mongoose-os-libs/http-server

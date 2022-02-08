@@ -105,10 +105,10 @@ config_schema:
       }
     }
   }']
-  - ["jsonschemawebui.customconfig.mapping", {
+  - ["jsonschemawebui.customconfig.mapping", '{
     "wifi-group.ssid": "wifi.sta.ssid",
     "wifi-group.password": "wifi.sta.password"
-  }]
+  }']
 ...
 ```
 `schema` - is your custom JSON Schema, do what ever you want there and put what ever fields you want in any nestings
