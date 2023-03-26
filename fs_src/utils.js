@@ -17,7 +17,7 @@ export const getDeepValue = (obj, path) => {
     for (let i = 0; i < pathChunks.length; i++) {
         obj = obj[pathChunks[i]];
 
-        if (!obj) {
+        if (typeof obj === 'undefined') {
             return "";
         }
     }
