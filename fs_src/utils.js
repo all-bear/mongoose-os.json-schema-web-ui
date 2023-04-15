@@ -24,3 +24,29 @@ export const getDeepValue = (obj, path) => {
 
     return obj;
 }
+
+export const fetchJSON = (url, method, data) => new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+
+    xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(JSON.parse(xhr.response));
+        } else {
+            reject({
+                status: xhr.status,
+                statusText: xhr.statusText
+            });
+        }
+    };
+
+    xhr.onerror = function () {
+        reject({
+            status: xhr.status,
+            statusText: xhr.statusText
+        });
+    };
+
+    xhr.open(method, url);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(data ? JSON.stringify(data) : undefined);
+})

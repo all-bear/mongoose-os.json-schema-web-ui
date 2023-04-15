@@ -119,6 +119,59 @@ This will generate a page which will looks like this:
 
 ![preview custom](docs/images/preview-custom.png)
 
+In a case if your `schema` is big, RPC function of Mongoose OS to retrieve `Config` could not work, in this case you could move both config and mapping to separate file (for example `fs/web-ui-config.json`), with content like:
+
+```json
+{
+  "schema": {
+    "title": "My Device",
+    "type": "object",
+    "properties": {
+      "wifi-group": {
+        "type": "object",
+        "title": "Wifi",
+        "format": "grid",
+        "properties": {
+          "ssid": {
+            "type": "string",
+            "title": "SSID"
+          },
+          "password": {
+            "type": "string",
+            "title": "Password"
+          }
+        }
+      },
+      "submit": {
+        "type": "button",
+        "title": "Save and reboot",
+        "options": {
+          "button": {
+            "action": "save-config",
+            "save-config": {
+              "reboot": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "mapping": {
+    "wifi-group.ssid": "wifi.sta.ssid",
+    "wifi-group.password": "wifi.sta.pass"
+  }
+}
+```
+
+and inside of `config_schema`:
+
+```yml
+mos.yml
+...
+config_schema:
+  - ["jsonschemawebui.customconfig.url", "/web-ui-config.json"]
+```
+
 ### RPC calls
 
 Inside your schema (doesn't matter is it config or custom form) you could use buttons to call RPC.

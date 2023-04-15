@@ -11,8 +11,11 @@ module.exports = {
         filename: "index.js"
     },
     optimization: {
+        minimize: true,
         minimizer: [new TerserPlugin({
+            minify: TerserPlugin.uglifyJsMinify,
             extractComments: false, // fs size is limited, sorry for this :(
+            parallel: true
         })],
     },
     module: {

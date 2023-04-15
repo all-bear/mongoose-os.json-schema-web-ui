@@ -12,6 +12,7 @@ config_schema:
   - ["jsonschemawebui.customconfig", "o", { title: "JSON Schema web ui config settings" } ]
   - ["jsonschemawebui.customconfig.schema", "s", "{}", { title: "JSON Schema web ui config settings schema" } ]
   - ["jsonschemawebui.customconfig.mapping", "s", "{}", { title: "JSON Schema web ui config settings mapping" } ]
+  - ["jsonschemawebui.customconfig.url", "s", "", { title: "JSON Schema web ui config url" } ]
 
 libs:
   - location: https://github.com/mongoose-os-libs/http-server
