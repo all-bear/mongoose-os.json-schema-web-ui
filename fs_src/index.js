@@ -81,7 +81,7 @@ loadConfig().then(async (config) => {
                 window.location.reload();
             }
         } catch (e) {
-            alert("Something goes wrong")
+            alert(e.message || "Something goes wrong")
         }
     }, async (name, params) => {
         try {
@@ -89,7 +89,7 @@ loadConfig().then(async (config) => {
 
             alert("Success");
         } catch (e) {
-            alert("Something goes wrong")
+            alert(e.message || "Something goes wrong")
         }
     });
 });

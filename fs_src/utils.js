@@ -32,17 +32,35 @@ export const fetchJSON = (url, method, data) => new Promise((resolve, reject) =>
         if (xhr.status >= 200 && xhr.status < 300) {
             resolve(JSON.parse(xhr.response));
         } else {
+            let message = "";
+
+            try {
+                message = JSON.parse(xhr.response).message;
+            } catch (e) {
+                // NOP
+            }
+
             reject({
                 status: xhr.status,
-                statusText: xhr.statusText
+                statusText: xhr.statusText,
+                message
             });
         }
     };
 
     xhr.onerror = function () {
+        let message = "";
+
+        try {
+            message = JSON.parse(xhr.response).message;
+        } catch (e) {
+            // NOP
+        }
+
         reject({
             status: xhr.status,
-            statusText: xhr.statusText
+            statusText: xhr.statusText,
+            message,
         });
     };
 
