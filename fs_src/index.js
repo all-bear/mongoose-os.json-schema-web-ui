@@ -6,7 +6,7 @@ import { setDeepValue, getDeepValue, fetchJSON } from "./utils"
 const WebUIConfigModeBehavior = {
     "config": {
         getSchema(config) {
-            return config.jsonschemawebui.config.schema;
+            return JSON.parse(config.jsonschemawebui.config.schema);
         },
         getDataFromConfig(config) {
             return config;
@@ -17,7 +17,7 @@ const WebUIConfigModeBehavior = {
     },
     "customconfig": {
         getSchema(config) {
-            return config.jsonschemawebui.customconfig.schema;
+            return JSON.parse(config.jsonschemawebui.customconfig.schema);
         },
         getDataFromConfig(config) {
             const mapping = JSON.parse(config.jsonschemawebui.customconfig.mapping);
@@ -87,7 +87,7 @@ loadConfig().then(async (config) => {
     );
     const modeBehavior = WebUIConfigModeBehavior[modeBehaviorName];
 
-    initializeJSONEditor(JSON.parse(await modeBehavior.getSchema(config)), await modeBehavior.getDataFromConfig(config), async (data, reboot) => {
+    initializeJSONEditor(await modeBehavior.getSchema(config), await modeBehavior.getDataFromConfig(config), async (data, reboot) => {
         try {
             await saveConfig(await modeBehavior.getConfigFromData(data, config), reboot);
 
